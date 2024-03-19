@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Acorn-Medium.ttf",
+      "sha1": "79fe072d635580f3df305ce4d3d4549bf8f96a7b"
+    },
+    {
+      "path": "assets/fonts/Acorn-Regular.ttf",
+      "sha1": "ccc8a7cfa5f62fafd3d9bf904825e297e9e00ef2"
+    },
+    {
+      "path": "assets/fonts/MadeTommy-Regular.otf",
+      "sha1": "a83d5104a8cdb25466f355c47a29ffee11dfb65e"
+    }
+  ]
+}
