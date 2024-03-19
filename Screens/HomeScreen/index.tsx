@@ -12,7 +12,7 @@ export default function HomeScreen() {
         <Text style={styles.bodyText}>your health score</Text>
         <Icon
           style={styles.icon}
-          name="InfoIcon"
+          name="Info"
           height="14"
           width="14"
           stroke={Colours.grey}
@@ -24,7 +24,7 @@ export default function HomeScreen() {
           <Text style={styles.buttonText}>Emergency</Text>
           <Icon
             style={styles.icon}
-            name="PhoneIcon"
+            name="Phone"
             height="20"
             width="20"
             stroke={Colours.beige}
@@ -33,7 +33,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.actionButton}>
           <Icon
-            name="StethoscopeIcon"
+            name="Stethoscope"
             height="20"
             width="20"
             stroke={Colours.black}
@@ -42,7 +42,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.actionButton}>
           <Icon
-            name="ExportIcon"
+            name="Export"
             height="20"
             width="20"
             stroke={Colours.black}
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: Colours.beige,
-    marginHorizontal: Sizing.l,
+    paddingHorizontal: Sizing.l,
   },
   subTitleText: {
     fontSize: Typography.fontSize.subtitle,

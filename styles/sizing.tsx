@@ -4,6 +4,8 @@ export const s = 4;
 
 export const m = 8;
 
+export const ml = 12;
+
 export const l = 16;
 
 export const xl = 32;
