@@ -21,7 +21,8 @@ function MyTabs() {
         name="Home"
         component={HomeScreen}
         options={{
-          // headerShown: false,
+          orientation: 'portrait',
+          headerShown: false,
           headerTitle: () => null,
           headerStyle: {
             backgroundColor: Colours.beige,

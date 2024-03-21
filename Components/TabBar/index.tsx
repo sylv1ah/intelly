@@ -12,14 +12,6 @@ export default function TabBar({state, descriptors, navigation}) {
   const [fabOpen, setFabOpen] = useState(false);
   return (
     <View style={styles.container}>
-      {/* <View style={styles.fabContainer}>
-        <Icon
-          name="Fab"
-          stroke={Colours.black}
-          fill="none"
-          style={styles.fab}
-        />
-      </View> */}
       {state.routes.map((route, index) => {
         console.log({route});
         const {options} = descriptors[route.key];
@@ -126,7 +118,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: Colours.black,
-    borderWidth: Sizing.m,
+    borderWidth: 5,
     borderStyle: 'solid',
     padding: Sizing.s,
   },

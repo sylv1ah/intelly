@@ -1,15 +1,16 @@
 //   fontFamily: 'MadeTommy-Regular',
 
-export const acornMediumLarge = {
-  fontFamily: 'Acorn-Medium',
-  fontSize: 98,
+export const fontFamily = {
+  acorn: 'Acorn-Medium',
 };
 
 export const fontSize = {
   smallBody: 10,
   body: 12,
+  largeBody: 16,
   subtitle: 20,
   title: 30,
+  extraLarge: 98,
 };
 
 export const fontWeight = {
