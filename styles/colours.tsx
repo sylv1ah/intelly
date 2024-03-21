@@ -12,4 +12,6 @@ export const green = '#9DAA6C';
 
 export const blue = '#BFCDE9';
 
+export const darkBlue = '#8FA1C4';
+
 export const grey = '#777674';

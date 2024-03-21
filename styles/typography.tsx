@@ -30,3 +30,13 @@ export const titleBold = {
   fontWeight: '600',
   fontSize: 80,
 };
+
+export const acornTitle = {
+  fontFamily: 'Acorn-Medium',
+  fontSize: 40,
+};
+
+export const subHeading = {
+  fontSize: 18,
+  fontWeight: 500,
+};

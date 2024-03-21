@@ -8,6 +8,13 @@ import {
 } from 'react-native';
 import {Colours, Typography, Sizing} from '../../styles';
 import Icon from '../../Components/Icon';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+  Home: undefined;
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const progressPoints = [
   {
@@ -60,7 +67,7 @@ const progressPoints = [
   },
 ];
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}: Props) {
   return (
     <ScrollView
       style={styles.container}
@@ -131,7 +138,9 @@ export default function HomeScreen() {
       </View>
       <View style={styles.highlightOuterContainer}>
         {progressPoints.map(point => (
-          <TouchableOpacity style={styles.highlightContainer}>
+          <TouchableOpacity
+            style={styles.highlightContainer}
+            onPress={() => navigation.navigate('WaterTracking')}>
             <Icon
               style={{
                 ...styles.highlightShape,
