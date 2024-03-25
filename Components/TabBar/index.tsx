@@ -1,4 +1,4 @@
-import react, {useState} from 'react';
+import react, {Fragment, useState} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -39,7 +39,7 @@ export default function TabBar({state, descriptors, navigation}) {
         };
 
         return (
-          <>
+          <Fragment key={index}>
             <TouchableOpacity
               accessibilityRole="button"
               accessibilityState={isFocused ? {selected: true} : {}}
@@ -77,7 +77,7 @@ export default function TabBar({state, descriptors, navigation}) {
                 </View>
               </TouchableOpacity>
             ) : null}
-          </>
+          </Fragment>
         );
       })}
     </View>

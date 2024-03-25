@@ -1,4 +1,15 @@
 {
   "name": "intelly",
-  "displayName": "intelly"
+  "displayName": "intelly",
+  "plugins": ["expo-font"],
+  "expo": {
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": ["assets/fonts/Acorn-Medium.ttf"]
+        }
+      ]
+    ]
+  }
 }

@@ -1,4 +1,4 @@
-import react from 'react';
+import react, {useCallback} from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,10 @@ import {
 import {Colours, Typography, Sizing} from '../../styles';
 import Icon from '../../Components/Icon';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useFonts} from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
 
 type RootStackParamList = {
   Home: undefined;
@@ -68,8 +72,22 @@ const progressPoints = [
 ];
 
 export default function HomeScreen({navigation}: Props) {
+  const [fontsLoaded, fontError] = useFonts({
+    'Acorn-Medium': require('../../assets/fonts/Acorn-Medium.ttf'),
+  });
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      console.log('fonts loaded');
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   return (
     <ScrollView
+      onLayout={onLayoutRootView}
       style={styles.container}
       contentContainerStyle={{
         alignItems: 'center',
@@ -137,8 +155,9 @@ export default function HomeScreen({navigation}: Props) {
         <Text style={styles.bodyText}>Show all...</Text>
       </View>
       <View style={styles.highlightOuterContainer}>
-        {progressPoints.map(point => (
+        {progressPoints.map((point, index) => (
           <TouchableOpacity
+            key={index}
             style={styles.highlightContainer}
             onPress={() => navigation.navigate('WaterTracking')}>
             <Icon

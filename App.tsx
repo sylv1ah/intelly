@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -107,6 +107,23 @@ function App(): React.JSX.Element {
                   height="20"
                   width="20"
                   stroke={Colours.black}
+                />
+              </TouchableOpacity>
+            ),
+            headerRight: () => (
+              <TouchableOpacity
+                onPress={() => navigation.goBack()}
+                style={{
+                  backgroundColor: Colours.darkBeige,
+                  borderRadius: 25,
+                  padding: 3,
+                }}>
+                <Icon
+                  name="Tick"
+                  height="20"
+                  width="20"
+                  stroke={Colours.black}
+                  fill="none"
                 />
               </TouchableOpacity>
             ),
