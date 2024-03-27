@@ -70,7 +70,9 @@ export default function WaterTrackingScreen() {
   return (
     <ScrollView style={styles.container}>
       <Text style={{...Typography.subHeading}}>Water today</Text>
-      <Text style={{...Typography.acornTitle}}>6 of 15 glasses</Text>
+      <Text style={{...Typography.acornTitle, paddingBottom: Sizing.m}}>
+        6 of 15 glasses
+      </Text>
       <Text
         style={{fontSize: Typography.fontSize.smallBody, color: Colours.grey}}>
         You have drunk 6/15 glasses of water. Keep going, only 9 glasses left
@@ -101,7 +103,7 @@ export default function WaterTrackingScreen() {
           </Text>
         </View>
       </View>
-      <View style={styles.dropdownContainer}>
+      <View style={[styles.dropdownContainer]}>
         <TouchableOpacity
           activeOpacity={1}
           style={styles.dropdown}
@@ -182,11 +184,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colours.beige,
     paddingHorizontal: Sizing.l,
+    paddingVertical: Sizing.m,
   },
   waterContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    // gap: 3,
+    columnGap: 3,
+    paddingBottom: Sizing.m,
   },
   dropdownContainer: {
     backgroundColor: 'white',

@@ -13,7 +13,6 @@ export default function TabBar({state, descriptors, navigation}) {
   return (
     <View style={styles.container}>
       {state.routes.map((route, index) => {
-        console.log({route});
         const {options} = descriptors[route.key];
         const routeName = route.name;
 

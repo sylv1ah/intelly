@@ -11,6 +11,7 @@ import Icon from '../../Components/Icon';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import ActionButtons from '../../Components/ActionButtons';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,6 +29,7 @@ const progressPoints = [
     rotation: '10deg',
     paddingTop: 30,
     colour: Colours.blue,
+    screenName: 'WaterTracking',
   },
   {
     name: 'pills',
@@ -36,6 +38,7 @@ const progressPoints = [
     rotation: '-10deg',
     paddingTop: 0,
     colour: Colours.yellow,
+    screenName: 'WaterTracking',
   },
   {
     name: 'heart',
@@ -44,6 +47,7 @@ const progressPoints = [
     rotation: '-20deg',
     paddingTop: 10,
     colour: Colours.pink,
+    screenName: 'WaterTracking',
   },
   {
     name: 'habits',
@@ -52,6 +56,7 @@ const progressPoints = [
     rotation: '-30deg',
     paddingTop: 0,
     colour: Colours.green,
+    screenName: 'WaterTracking',
   },
   {
     name: 'sleep',
@@ -60,6 +65,7 @@ const progressPoints = [
     rotation: '10deg',
     paddingTop: 35,
     colour: Colours.yellow,
+    screenName: 'SleepTracking',
   },
   {
     name: 'mind',
@@ -68,6 +74,7 @@ const progressPoints = [
     rotation: '0deg',
     paddingTop: 0,
     colour: Colours.blue,
+    screenName: 'WaterTracking',
   },
 ];
 
@@ -77,7 +84,6 @@ export default function HomeScreen({navigation}: Props) {
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded || fontError) {
-      console.log('fonts loaded');
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded, fontError]);
@@ -113,38 +119,13 @@ export default function HomeScreen({navigation}: Props) {
           fill={Colours.grey}
         />
       </View>
-      <View style={styles.actionButtonsContainer}>
-        <TouchableOpacity
-          style={{...styles.textWithIcon, ...styles.actionButtonWithText}}>
-          <Text style={styles.buttonText}>Emergency</Text>
-          <Icon
-            style={styles.icon}
-            name="Phone"
-            height="20"
-            width="20"
-            stroke={Colours.beige}
-            fill="none"
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
-          <Icon
-            name="Stethoscope"
-            height="20"
-            width="20"
-            stroke={Colours.black}
-            fill="none"
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton}>
-          <Icon
-            name="Export"
-            height="20"
-            width="20"
-            stroke={Colours.black}
-            fill="none"
-          />
-        </TouchableOpacity>
-      </View>
+      <ActionButtons
+        primaryButtonTitle="Emergency"
+        primaryButtonIcon="Phone"
+        secondaryButton1="Stethoscope"
+        secondaryButton2="Export"
+      />
+
       <View style={styles.subHeadingContainer}>
         <View>
           <Text style={styles.subTitleText}>Daily highlights</Text>
@@ -159,7 +140,7 @@ export default function HomeScreen({navigation}: Props) {
           <TouchableOpacity
             key={index}
             style={styles.highlightContainer}
-            onPress={() => navigation.navigate('WaterTracking')}>
+            onPress={() => navigation.navigate(point.screenName)}>
             <Icon
               style={{
                 ...styles.highlightShape,

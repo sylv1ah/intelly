@@ -8,6 +8,8 @@ export const pink = '#ECBAD9';
 
 export const yellow = '#F0D978';
 
+export const darkYellow = '#E3C962';
+
 export const green = '#9DAA6C';
 
 export const blue = '#BFCDE9';

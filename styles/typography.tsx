@@ -10,6 +10,7 @@ export const fontSize = {
   largeBody: 16,
   subtitle: 20,
   title: 30,
+  mediumLarge: 70,
   extraLarge: 98,
 };
 
