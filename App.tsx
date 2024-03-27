@@ -10,6 +10,7 @@ import {
   AccountScreen,
   WaterTrackingScreen,
   SleepTrackingScreen,
+  HeartAnalysisScreen,
 } from './Screens';
 import {Colours, Typography} from './styles';
 import TabBar from './Components/TabBar/index';
@@ -94,6 +95,40 @@ function HomeStacks() {
           },
           headerStyle: {
             backgroundColor: Colours.yellow,
+          },
+          headerBackTitleVisible: false,
+          headerShadowVisible: false,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={{
+                borderWidth: 1,
+                borderStyle: 'dashed',
+                borderColor: Colours.grey,
+                borderRadius: 25,
+                padding: 3,
+              }}>
+              <Icon
+                name="Cross"
+                height="20"
+                width="20"
+                stroke={Colours.black}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="HeartAnalysis"
+        component={HeartAnalysisScreen}
+        options={({navigation, route}) => ({
+          headerTitle: 'Heart analysis',
+          headerTitleStyle: {
+            fontWeight: '500',
+            fontSize: Typography.fontSize.body,
+          },
+          headerStyle: {
+            backgroundColor: Colours.pink,
           },
           headerBackTitleVisible: false,
           headerShadowVisible: false,

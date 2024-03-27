@@ -47,7 +47,7 @@ const progressPoints = [
     rotation: '-20deg',
     paddingTop: 10,
     colour: Colours.pink,
-    screenName: 'WaterTracking',
+    screenName: 'HeartAnalysis',
   },
   {
     name: 'habits',

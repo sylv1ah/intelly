@@ -4,6 +4,7 @@ import TipsScreen from './TipsScreen';
 import AccountScreen from './AccountScreen';
 import WaterTrackingScreen from './WaterTrackingScreen';
 import SleepTrackingScreen from './SleepTrackingScreen';
+import HeartAnalysisScreen from './HeartAnalysisScreen';
 
 export {
   HomeScreen,
@@ -12,4 +13,5 @@ export {
   AccountScreen,
   WaterTrackingScreen,
   SleepTrackingScreen,
+  HeartAnalysisScreen,
 };

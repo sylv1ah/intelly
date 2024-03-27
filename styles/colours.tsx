@@ -6,6 +6,8 @@ export const black = '#151515';
 
 export const pink = '#ECBAD9';
 
+export const darkPink = '#D7A2C2';
+
 export const yellow = '#F0D978';
 
 export const darkYellow = '#E3C962';
